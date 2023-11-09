@@ -1,0 +1,35 @@
+{% load static %}
+{% load roster_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'roster/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Work Schedule</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student / Day</th>
+                    {% for day in days %}
+                    <th>{{ day }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for worker in workers %}
+                <tr>
+                    <td>{{ worker.name }}</td>
+                    {% for day in days %}
+                    <td>{% get_schedule schedule_matrix worker day %}</td>  <!-- Use the custom tag here -->
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

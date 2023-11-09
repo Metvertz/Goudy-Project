@@ -1,0 +1,38 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #000;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #000;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
